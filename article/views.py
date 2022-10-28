@@ -2,10 +2,11 @@
 from rest_framework.response import Response
 from article.serializers import ArticleSerializer
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from .models import Article
 # Create your views here.
 
-
+@api_view(('GET','POST'))
 class ArticleView(APIView):
     def get(self, request):
         articles = Article.objects.all()
