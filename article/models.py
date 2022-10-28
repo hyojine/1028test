@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Article(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, verbose_name='작성자', on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     content = models.TextField(blank=True)
 
